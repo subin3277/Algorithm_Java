@@ -13,7 +13,6 @@ public class no_8393 {
 			sum = sum+i;
 		}
 		System.out.println(sum);
-
 	}
 
 }
