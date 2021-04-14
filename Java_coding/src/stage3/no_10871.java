@@ -13,7 +13,7 @@ public class no_10871 {
 		for(int i=0;i<N;i++) {
 			int A = num.nextInt();
 			if (A<X) {
-				System.out.print(A);
+				System.out.print(A+" ");
 			}
 		}
 
