@@ -20,7 +20,6 @@ public class no_1065 {
 		if (A<100) {
 			return true;
 		} else if(A>=100 & A<1000) {
-			//a=123
 			int a = A/100;
 			int b = (A/10)%10;
 			int c = A%10;
