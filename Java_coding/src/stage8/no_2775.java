@@ -11,19 +11,20 @@ public class no_2775 {
 		for (int i=0;i<T;i++) {
 			int k = scanner.nextInt();
 			int n = scanner.nextInt();
-			
-			int sum=0;
-			int addsum=1;
-			for(int j=1;j<k+1;j++) {
-				sum+=addsum;
-				addsum+=j;
-				System.out.println(sum);
-			}
-			sum+=k+1;
-			System.out.println(sum);
+			System.out.println(sum(k,n));
 		}
 		scanner.close();
 
+	}
+	
+	private static int sum(int k,int n) {
+		if (k==0) {
+			return n;
+		} else if (n==0) {
+			return 0;
+		} else {
+			return sum(k-1,n)+sum(k,n-1);
+		}
 	}
 
 }
