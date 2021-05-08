@@ -30,7 +30,7 @@ public class no_2581 {
 			System.out.println(sum);
 			System.out.println(min);
 		}
-		
+		scanner.close();
 	}
 
 }
