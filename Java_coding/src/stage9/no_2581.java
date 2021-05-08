@@ -11,7 +11,7 @@ public class no_2581 {
 		int B = scanner.nextInt();
 		int sum=0;
 		int min=B;
-		for(int i=A;i<B;i++) {
+		for(int i=A;i<B+1;i++) {
 			int prime=0;
 			for (int j=1;j<i+1;j++) {
 				if(i%j==0)
@@ -19,7 +19,7 @@ public class no_2581 {
 			}
 			if(prime==2) {
 				sum+=i;
-				if(i<B) {
+				if(i<min) {
 					min=i;
 				}
 			}
