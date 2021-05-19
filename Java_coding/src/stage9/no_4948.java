@@ -3,33 +3,42 @@ package stage9;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class no_4948 {
+	
+	public static boolean[] prime = new boolean[246913];
 
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+	public static void main(String[] args){
+	
+		Scanner in = new Scanner(System.in);
         
-		int N = Integer.parseInt(st.nextToken());
-		while (N!=0) {
-			int count=1;
-			for (int i=N;i<2*N;i++) {
-				int subcount=0;		
-				for(int j=2;j<i;j++) {
-					if(i%j==0) {
-						subcount+=1;
-					}
-				}
-				if(subcount==2) {
-					count++;
-				}
+		get_prime();	// 소수를 얻는 메소드 실행
+		
+		while(true) {
+			int n = in.nextInt();
+			if(n == 0) break;	// n 이 0 일경우 종료
+            
+			int count = 0;	// 소수 개수를 셀 변수
+            
+			for(int i = n + 1; i <= 2 * n; i++) {
+				if(!prime[i]) count++;
 			}
 			System.out.println(count);
-			N = Integer.parseInt(st.nextToken());
-		}
-		
+		}	
 		
 	}
 
+	public static void get_prime() {
+		// 0 과 1 은 소수가 아니므로 ture
+		prime[0] = prime[1] = true;
+		
+		for(int i = 2; i <= Math.sqrt(prime.length); i++) {
+			if(prime[i]) continue;
+			for(int j = i * i; j < prime.length; j += i) {
+				prime[j] = true;
+			}
+		}
+	}
 }
