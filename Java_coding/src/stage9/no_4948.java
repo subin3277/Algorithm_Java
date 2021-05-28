@@ -3,42 +3,40 @@ package stage9;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class no_4948 {
-	
-	public static boolean[] prime = new boolean[246913];
 
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
 	
-		Scanner in = new Scanner(System.in);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
         
-		get_prime();	// 소수를 얻는 메소드 실행
-		
-		while(true) {
-			int n = in.nextInt();
-			if(n == 0) break;	// n 이 0 일경우 종료
-            
-			int count = 0;	// 소수 개수를 셀 변수
-            
-			for(int i = n + 1; i <= 2 * n; i++) {
-				if(!prime[i]) count++;
-			}
-			System.out.println(count);
-		}	
-		
-	}
-
-	public static void get_prime() {
-		// 0 과 1 은 소수가 아니므로 ture
-		prime[0] = prime[1] = true;
-		
-		for(int i = 2; i <= Math.sqrt(prime.length); i++) {
-			if(prime[i]) continue;
-			for(int j = i * i; j < prime.length; j += i) {
-				prime[j] = true;
+		while (true) {
+			int A = Integer.parseInt(st.nextToken());
+			int count=0;
+			if(A==0)
+				break;
+			else {
+				for(int i=A+1;i<(2*A)+1;i++) {
+					if (getPrime(i))
+						count++;
+				}
+				System.out.println(count);
 			}
 		}
+		
+	}
+	
+	public static boolean getPrime(int A) {
+		int i=2;
+		for(i=2;i<A+1;i++) {
+			if(A%i==0)
+				break;
+		}
+		if (i==A)
+			return true;
+		else
+			return false;
 	}
 }
