@@ -1,14 +1,24 @@
 package stage9;
 
+import java.util.Scanner;
+
 public class no_9020 {
 
-	boolean[] prime = new boolean[10001];
+	static boolean[] prime = new boolean[10001];
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		get_prime();
+		Scanner in = new Scanner(System.in);
+		
+		int N = in.nextInt();
+		getPrime();
+		
+		for(int i=0;i<N;i++) {
+			int A = in.nextInt();
+			getNum(A);			
+		}
 	}
 
-	void get_prime() {
+	public static void getPrime() {
 	    
 		prime[0] = prime[1] = true;
  
@@ -17,6 +27,14 @@ public class no_9020 {
             
 			for (int j = i * i; j < prime.length; j += i) {
 				prime[j] = true;
+			}
+		}
+	}
+	public static void getNum(int A) {
+		for(int i=A/2;i>1;i--) {
+			if(!prime[i]&&!prime[A-i]) {
+				System.out.println(i+" "+(A-i));
+				break;
 			}
 		}
 	}
