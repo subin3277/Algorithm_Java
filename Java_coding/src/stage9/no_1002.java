@@ -16,7 +16,6 @@ public class no_1002 {
 			int y2 = in.nextInt();
 			int r2 = in.nextInt();
 			double d = Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
-			System.out.println(d);
 			if(d==0) {
 				if(r1==r2)
 					System.out.println("-1");
