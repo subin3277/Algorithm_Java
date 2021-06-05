@@ -15,7 +15,7 @@ public class no_2231 {
 		if(N<=18) {
 			if(N%2==0) {
 					sum=N/2;
-					System.out.println(N/2);
+					System.out.println(sum);
 				}
 		} else if(N<118) {
 			int n = N-18;
