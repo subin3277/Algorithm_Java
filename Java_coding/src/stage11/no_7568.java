@@ -9,11 +9,11 @@ public class no_7568 {
 		 
 		int N = in.nextInt();
  
-		int[][] arr = new int[N][2];
+		int[][] array = new int[N][2];
  
 		for(int i = 0; i < N; i++) {
-			arr[i][0] = in.nextInt();	// [i][0] : 个公霸 
-			arr[i][1] = in.nextInt();	// [i][1] : 虐 
+			array[i][0] = in.nextInt();	// [i][0] : 个公霸 
+			array[i][1] = in.nextInt();	// [i][1] : 虐 
 		}
 		
 		
@@ -22,7 +22,7 @@ public class no_7568 {
 			
 			for(int j = 0; j < N; j++) {
 				if(i == j) continue;
-				if (arr[i][0] < arr[j][0] && arr[i][1] < arr[j][1]) {
+				if (array[i][0] < array[j][0] && array[i][1] < array[j][1]) {
 					rank++;
 				}
 			}
