@@ -21,33 +21,8 @@ public class no_2108 {
 		in.close();
 		Collections.sort(arr);
 		
-		int maxcount=-1;
-		int count=0;
-		ArrayList<Integer> countarr = new ArrayList<>();
-		for(int i=0;i<account-1;i++) {
-			if(arr.get(i)==arr.get(i+1))
-				count++;
-			else
-				if(count>=maxcount) {
-					if(count==maxcount) {
-						countarr.add(arr.get(i));
-					} else {
-						countarr = new ArrayList<>();
-						countarr.add(arr.get(i));
-					}
-					maxcount=count;
-				}
-				count=0;
-		}
-		
 		System.out.println(Math.round(sum/account));
 		System.out.println(arr.get((account-1)/2));
-		if(countarr.size()!=1) {
-			Collections.sort(countarr);
-			System.out.println(countarr.get(1));
-		} else {
-			System.out.println(countarr.get(0));
-		}
 		
 		System.out.println(arr.get(account-1)-arr.get(0));
 	}
