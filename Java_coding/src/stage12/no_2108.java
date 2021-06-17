@@ -12,7 +12,8 @@ public class no_2108 {
 		int account = 0;
 		int sum=0;
 		
-		while(in.hasNext()) {
+		int N = in.nextInt();
+		for(int i=0;i<N;i++) {
 			int num = in.nextInt();
 			arr.add(num);
 			account++;
@@ -20,10 +21,38 @@ public class no_2108 {
 		}
 		in.close();
 		Collections.sort(arr);
+		System.out.print(arr.toString());
+		int maxcount=0;
+		int count=0;
+		ArrayList<Integer> maxarr = new ArrayList<>();
+		if(arr.size()==1) {
+			maxarr.add(arr.get(0));
+		} else {
+			for(int i=0;i<N-1;i++) {
+				if(arr.get(i)==arr.get(i+1)) {
+					count++;
+				} else {
+					if(count>=maxcount) {
+						if(count!=maxcount) {
+							maxarr.clear();
+						} 
+						maxarr.add(arr.get(i));
+						maxcount=count;
+					} else {
+						count=0;
+					}
+				}
+			}
+		}
 		
 		System.out.println(Math.round(sum/account));
 		System.out.println(arr.get((account-1)/2));
-		
+		System.out.print(maxarr.toString());
+		if(maxarr.size()==1) {
+			System.out.println(maxarr.get(0));
+		} else {
+			System.out.println(maxarr.get(1));
+		}
 		System.out.println(arr.get(account-1)-arr.get(0));
 	}
 
