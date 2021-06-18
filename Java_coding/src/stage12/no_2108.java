@@ -10,7 +10,7 @@ public class no_2108 {
 
 		ArrayList<Integer> arr = new ArrayList<>();
 		int account = 0;
-		int sum=0;
+		double sum=0;
 		
 		int N = in.nextInt();
 		for(int i=0;i<N;i++) {
@@ -21,33 +21,40 @@ public class no_2108 {
 		}
 		in.close();
 		Collections.sort(arr);
-		System.out.print(arr.toString());
 		int maxcount=0;
-		int count=0;
+		int count=1;
 		ArrayList<Integer> maxarr = new ArrayList<>();
 		if(arr.size()==1) {
 			maxarr.add(arr.get(0));
 		} else {
-			for(int i=0;i<N-1;i++) {
-				if(arr.get(i)==arr.get(i+1)) {
-					count++;
-				} else {
+			for(int i=0;i<N;i++) {
+				if(i==N-1) {
 					if(count>=maxcount) {
 						if(count!=maxcount) {
 							maxarr.clear();
 						} 
 						maxarr.add(arr.get(i));
 						maxcount=count;
+					} 
+				} else {
+					if(arr.get(i)==arr.get(i+1)) {
+						count++;
 					} else {
-						count=0;
+						if(count>=maxcount) {
+							if(count!=maxcount) {
+								maxarr.clear();
+							} 
+							maxarr.add(arr.get(i));
+							maxcount=count;
+						} 
+						count=1;
 					}
 				}
+				
 			}
 		}
-		
 		System.out.println(Math.round(sum/account));
 		System.out.println(arr.get((account-1)/2));
-		System.out.print(maxarr.toString());
 		if(maxarr.size()==1) {
 			System.out.println(maxarr.get(0));
 		} else {
