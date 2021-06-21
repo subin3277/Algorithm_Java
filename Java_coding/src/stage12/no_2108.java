@@ -53,7 +53,7 @@ public class no_2108 {
 				
 			}
 		}
-		System.out.println(Math.round(sum/account));
+		System.out.println((int)Math.round(sum/account));
 		System.out.println(arr.get((account-1)/2));
 		if(maxarr.size()==1) {
 			System.out.println(maxarr.get(0));
