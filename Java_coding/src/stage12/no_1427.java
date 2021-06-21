@@ -13,7 +13,6 @@ public class no_1427 {
 		
 		int len = (int)(Math.log10(N)+1);
 		ArrayList<Integer> arr = new ArrayList<>();
-		int num = N;
 		
 		for(int i=0;i<len;i++) {
 			arr.add(N%10);
