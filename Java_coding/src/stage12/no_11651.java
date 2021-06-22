@@ -17,7 +17,7 @@ public class no_11651 {
 			array[i][1] = in.nextInt();	// [i][0] : x ÁÂÇ¥ 
 			array[i][0] = in.nextInt();	// [i][1] : y ÁÂÇ¥
 		}
-		
+		in.close();
 		Arrays.sort(array, new Comparator<int[]>() {
 			@Override
 			public int compare(int[] o1, int[] o2) {
