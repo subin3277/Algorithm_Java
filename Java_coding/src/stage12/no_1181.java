@@ -17,15 +17,17 @@ public class no_1181 {
 		
 		for(int i=0;i<N;i++) {
 			String str = in.next();
-			arr.add(str);
 			if(arr.contains(str)) {
+				arr.add(str);
 				lenarr[i][0] = 0;
 				lenarr[i][1] = i;
 			} else {
+				arr.add(str);
 				lenarr[i][0] = str.length();
 				lenarr[i][1] = i;
 			}
 		}
+		in.close();
 
 		Arrays.sort(lenarr, new Comparator<int[]>() {
 			@Override
@@ -34,22 +36,30 @@ public class no_1181 {
 			}
 		});
 		
-		System.out.println(arr);
+		for(int i=0;i<N;i++) {
+			System.out.println(lenarr[i][0]+" "+lenarr[i][1]);
+		}
+		
 		ArrayList<String> word = new ArrayList<>();
-		for(int i=0;i<N-1;i++) {
-			if(lenarr[i][0]!=0) {
-				if(lenarr[i][0]!=lenarr[i+1][0]) {
+		for(int i=0;i<N;i++) {
+			if(i==N-1) {
+				Collections.sort(word);
+				for(int j=0;j<word.size();j++) {
+					System.out.println(word.get(j));
+				}
+			} else {
+				if(lenarr[i][0]!=0) {
 					word.add(arr.get(lenarr[i][1]));
-					Collections.sort(word);
-					for(int j=0;j<word.size();j++) {
-						System.out.println(word.get(j));
-					}
-					word.clear();
-				} else {
-					word.add(arr.get(lenarr[i][1]));
+					if(lenarr[i][0]!=lenarr[i+1][0]) {
+						Collections.sort(word);
+						for(int j=0;j<word.size();j++) {
+							System.out.println(word.get(j));
+						}
+						word.clear();
+					} 
 				}
 			}
-			System.out.println(word);
+			
 		}
 	}
 }
