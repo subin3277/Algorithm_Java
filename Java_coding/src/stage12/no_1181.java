@@ -36,13 +36,10 @@ public class no_1181 {
 			}
 		});
 		
-		for(int i=0;i<N;i++) {
-			System.out.println(lenarr[i][0]+" "+lenarr[i][1]);
-		}
-		
 		ArrayList<String> word = new ArrayList<>();
 		for(int i=0;i<N;i++) {
 			if(i==N-1) {
+				word.add(arr.get(lenarr[i][1]));
 				Collections.sort(word);
 				for(int j=0;j<word.size();j++) {
 					System.out.println(word.get(j));
