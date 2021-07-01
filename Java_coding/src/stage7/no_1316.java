@@ -14,32 +14,12 @@ public class no_1316 {
 			if ((str.length()==1)||(str.length()==2))
 				count+=1;
 			else {
-				for (int j=0;j<str.length();j++) {
-					char letter = str.charAt(j);
-					if (letter==str.charAt(j+1)) {
-						for(int k=j+1;k<str.length();k++) {
-							if(letter!=str.charAt(k)) {
-								for (int l=k+1;l<str.length();l++) {
-									if(letter==str.charAt(l)) {
-										break;
-									} 
-								}
-								count++;
-								break;
-							}
-						}
-					} else {
-						for (int k=j+1;k<str.length();k++) {
-							if(letter==str.charAt(k)) {
-								break;
-								} 
-							}
-						count++;
-						break;
-					}
+				for(int j=0;j<str.length();j++) {
+					
 				}
 			
 			}
+			scanner.close();
 			System.out.println(count);	
 		}
 		
