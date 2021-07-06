@@ -53,5 +53,5 @@ public class no_1316 {
 		}    
 		return true;
 	}
-}
+
 }
