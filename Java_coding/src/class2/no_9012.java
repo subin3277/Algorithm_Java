@@ -18,7 +18,7 @@ public class no_9012 {
 				int lcount=1;
 				int rcount=0;
 				if((str.charAt(0)==')')||(str.charAt(str.length()-1)=='('))
-					System.out.println("No");
+					System.out.println("NO");
 				else {
 					for(int j=1;j<str.length();j++) {
 						if(str.charAt(j)=='('){
