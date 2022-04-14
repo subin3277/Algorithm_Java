@@ -1,68 +1,65 @@
 package class2;
 
-import java.util.ArrayList;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Scanner;
 
 public class no_10866 {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		
+		StringBuilder sb = new StringBuilder();
+		Deque<Integer> deque = new ArrayDeque<>();
 		int N = in.nextInt();
-
-		ArrayList<Integer> list = new ArrayList<>();
+		int num=0;
 		
 		for(int i=0;i<N;i++) {
 			String str = in.next();
-			int size = list.size();
 			switch(str) {
 				case "push_front" : 
-					int num = in.nextInt();
-					list.add(0,num);
+					num = in.nextInt();
+					deque.addFirst(num);
 					break;
 				case "push_back" :
-					int num2 = in.nextInt();
-					list.add(num2);
+					num = in.nextInt();
+					deque.addLast(num);
 					break;
 				case "pop_front" :
-					if(size==0)
-						System.out.println(-1);
-					else {
-						System.out.println(list.get(0));
-						list.remove(0);
-					}
+					if(deque.size()==0)
+						sb.append("-1").append('\n');
+					else 
+						sb.append(deque.removeFirst()).append('\n');
 					break;
 				case "pop_back" :
-					if(size==0)
-						System.out.println(-1);
-					else {
-						System.out.println(list.get(size-1));
-						list.remove(size-1);
-					}
+					if(deque.size()==0)
+						sb.append("-1").append('\n');
+					else
+						sb.append(deque.removeLast()).append('\n');
 					break;
 				case "size" :
-					System.out.println(size);
+					sb.append(deque.size()).append('\n');
 					break;
 				case "empty" :
-					if(size==0)
-						System.out.println(1);
+					if(deque.size()==0)
+						sb.append("1").append('\n');
 					else
-						System.out.println(0);
+						sb.append("0").append('\n');
 					break;
 				case "front" :
-					if(size==0)
-						System.out.println(-1);
+					if(deque.size()==0)
+						sb.append("-1").append('\n');
 					else 
-						System.out.println(list.get(0));
+						sb.append(deque.getFirst()).append('\n');
 					break;
 				case "back" :
-					if(size==0)
-						System.out.println(-1);
+					if(deque.size()==0)
+						sb.append("-1").append('\n');
 					else 
-						System.out.println(list.get(size-1));
+						sb.append(deque.getLast()).append('\n');
 					break;
 			}
 		}
+		System.out.println(sb);
 		in.close();
 	}
 
