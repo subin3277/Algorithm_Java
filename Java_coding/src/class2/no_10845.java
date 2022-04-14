@@ -18,34 +18,34 @@ public class no_10845 {
 			switch(str) {
 				case "push" :
 					num = in.nextInt();
-					queue.add(num);
+					queue.offer(num);
 					break;
 				case "pop":
-					if(queue.poll()==null)
+					if(queue.size()==0)
 						sb.append("-1").append('\n');
-					else {
+					else
 						sb.append(queue.poll()).append('\n');
-						queue.remove();
-					}
 					break;
-					
-					//여기까지 완료
 				case "size":
-					sb.append(stack.size()).append('\n');
+					sb.append(queue.size()).append('\n');
 					break;
 				case "empty":
-					if(stack.empty())
+					if(queue.size()==0)
 						sb.append("1").append('\n');
 					else
 						sb.append("0").append('\n');
 					break;
 				case "front" :
-					if(stack.empty())
+					if(queue.size()==0)
 						sb.append("-1").append('\n');
 					else
-						sb.append(stack.peek()).append('\n');
+						sb.append(queue.peek()).append('\n');
 					break;
 				case "back" :
+					if(queue.size()==0)
+						sb.append("-1").append('\n');
+					else
+						sb.append(num).append('\n');
 					break;
 			}
 			
