@@ -24,7 +24,8 @@ public class no_4949 {
 					}
 					else if(stack.peek().equals("(")) {
 						stack.pop();
-					}
+					} else
+						break;
 				} else if(arr[i] == ']') {
 					if(stack.empty()) {
 						stack.add(Character.toString(arr[i]));
@@ -32,7 +33,8 @@ public class no_4949 {
 					}
 					else if(stack.peek().equals("[")) {
 						stack.pop();
-					}
+					} else
+						break;
 				}
 				
 			}
