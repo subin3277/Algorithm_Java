@@ -26,15 +26,7 @@ public class no_1966 {
 				queue.add(tmplist);
 			}
 			
-			first = queue.poll();
-			queue.add(num);
-			for(int j = 0;j<N-1;i++) {
-				int temp = queue.poll();
-				if(num<temp) {
-					break;
-				} else
-					queue.add(temp);
-			}
+			
 		}
 		in.close();
 	}
