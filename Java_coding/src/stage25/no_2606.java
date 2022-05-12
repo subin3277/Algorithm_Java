@@ -1,4 +1,4 @@
-package stage24;
+package stage25;
 
 import java.util.LinkedList;
 import java.util.Scanner;
