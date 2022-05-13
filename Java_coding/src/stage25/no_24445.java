@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class no_24444 {
+public class no_24445 {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
@@ -31,8 +31,8 @@ public class no_24444 {
 		}
 		
 		for(int i=1;i<N+1;i++) {
-			Collections.sort(list[i]);
-		} //내림차순 정렬
+			Collections.sort(list[i],Collections.reverseOrder());
+		} //오름차순 정렬
 		
 		in.close();
 		
@@ -59,6 +59,7 @@ public class no_24444 {
 		for(int i=1;i<N+1;i++) {
 			System.out.println(count[i]);
 		}
+
 	}
 
 }
