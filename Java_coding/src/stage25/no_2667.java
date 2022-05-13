@@ -1,5 +1,6 @@
 package stage25;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class no_2667 {
@@ -9,6 +10,7 @@ public class no_2667 {
 	static boolean[][] visited;
 	static char[][] list;
 	static int count=0;
+	static int[] aparts;
 	
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
@@ -16,6 +18,7 @@ public class no_2667 {
 		
 		list = new char[N][N];
 		visited = new boolean[N][N];
+		aparts = new int[N*N];
 		
 		for(int i=0;i<N;i++) {
 			String str = in.next();
@@ -25,17 +28,34 @@ public class no_2667 {
 
 		for(int i=0;i<N;i++) {
 			for(int j=0;j<N;j++) {
-				if(list[i][j] == 1 && !visited[i][j]) {
+				if(list[i][j] == '1' && !visited[i][j]) {
 					count++;
-					DFS(i,j);
+					DFS(i,j,N);
 				}
 			}
 		}
+		
+		Arrays.sort(aparts);
+		System.out.println(count);
+		
+		for(int i=0;i<aparts.length;i++) {
+			if(aparts[i]!=0)
+				System.out.println(aparts[i]);
+		}
 	}
 	
-	public static void DFS(int i, int j) {
+	public static void DFS(int x, int y, int n) {
 		visited[x][y] = true;
+		aparts[count]++;
 		
+		for(int i=0;i<4;i++) {
+			int nx = x+dx[i];
+			int ny = y+dy[i];
+			if(nx>=0&&ny>=0&&nx<n&&ny<n) {
+				if(list[nx][ny] == '1' && !visited[nx][ny])
+					DFS(nx,ny,n);
+			}
+		}
 	}
 
 }
