@@ -16,8 +16,8 @@ public class no_2525 {
 			B=B+C-(num*60);
 		} else
 			B=B+C;
-		if(A==24)
-			A=0;
+		if(A>=24)
+			A-=24;
 		System.out.println(A+" "+B);
 
 	}
