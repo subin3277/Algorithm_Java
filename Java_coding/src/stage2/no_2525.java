@@ -10,16 +10,13 @@ public class no_2525 {
 		int B = in.nextInt();
 		int C = in.nextInt();
 		
-		if(B+C>=60) {
-			int num = (B+C)/60;
-			A+=num;
-			B=B+C-(num*60);
-		} else
-			B=B+C;
-		if(A>=24)
+		B=B+C;
+		while(B>=60) {
+			A++;
+			B-=60;
+		}
+		while(A>=24)
 			A-=24;
 		System.out.println(A+" "+B);
-
 	}
-
 }
