@@ -1,41 +1,52 @@
 package LV3;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
 public class no_1389 {
 
-	static int[][] list;
+	static ArrayList<Integer>[] list;
 	static boolean[] visited;
-	static int res;
 	static int[] marked;
+	static int N;
 	
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		int N = in.nextInt(); //유저수
+		N = in.nextInt(); //유저수
 		int M = in.nextInt(); //친구관계수
-		list = new int[N+1][N+1];
+		list = new ArrayList[N+1];
 		visited = new boolean[N+1];
 		marked = new int[N+1];
+		
+		for(int i=1;i<N+1;i++)
+			list[i] = new ArrayList<Integer>();
 		for(int i=0;i<M;i++) {
 			int a = in.nextInt();
 			int b = in.nextInt();
-			list[a][b] = list[b][a]=1;
+			
+			list[a].add(b);
+			list[b].add(a);
 		}
 		in.close();
 		
-		for(int i =1;i<N+1;i++) {
-			visited = new boolean[N+1];
-			BFS(i);
+		int answer = 100000;
+		int answeridx = 0;
+		for(int i=1;i<N+1;i++) {
+			int a = BFS(i);
+			if(a<answer) {
+				answer = a;
+				answeridx = i;
+			}
 		}
-		
-		System.out.println(res);
+		System.out.println(answeridx);
 	}
 
-	public static void BFS(int start) {
+	public static int BFS(int start) {
 		Queue<Integer> queue = new LinkedList<>();
-		int count = 0;
+		marked = new int[N+1];
+		visited = new boolean[N+1];
 		
 		visited[start] = true;
 		queue.offer(start);
@@ -51,5 +62,11 @@ public class no_1389 {
 				}
 			}
 		}
+		
+		int sum=0;
+		for(int i:marked)
+			sum += i;
+		
+		return sum;
 	}
 }
