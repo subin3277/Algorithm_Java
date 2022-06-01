@@ -9,36 +9,44 @@ public class no_1018 {
 		Scanner in = new Scanner(System.in);
 		int M = in.nextInt(); //10
 		int N = in.nextInt(); //13
-		int min=32;
+		int min=64;
 		int count=0;
-		char[][] list = new char[N+1][M+1];
+		char[][] list = new char[M][N];
 		for (int i=0;i<M;i++) {
 			char[] tmp=in.next().toCharArray();
 			list[i]=tmp;
 		}
 		in.close();
 		
-		for(int i=0;i<M-7;i++) { 
+		for(int i=0;i<M-7;i++) {
 			for(int j=0;j<N-7;j++) {
-				for(int k=i;k<i+7;k=k+2) {
-					for(int l=j;l<j+7;l=l+2) {
-						if(list[k][l]!='W')
+				
+				char first = list[i][j];
+				count = 0;
+				
+				for(int k=i;k<i+8;k++) {
+					for(int h=j;h<j+8;h++) {
+						if(list[k][h]!=first) {
 							count++;
-						if(list[k][l+1]!='B') 
-							count++;
-						if(list[k+1][l]!='B')
-							count++;
-						if(list[k+1][l+1]!='W')
-							count++;
+						}
+						
+						if(first == 'W')
+							first = 'B';
+						else
+							first = 'W';
+						
 					}
+					
+					if(first == 'W')
+						first = 'B';
+					else
+						first = 'W';
 				}
-				if(count<min)
-					min=count;
-				else if((64-count<min)&&(count>32))
-					min = 64-count;
-				count=0;
+				count = Math.min(count, 64-count);
+				min = Math.min(count, min);
 			}
 		}
+			
 		System.out.println(min);
 	}
 
