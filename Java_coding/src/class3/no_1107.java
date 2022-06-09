@@ -9,39 +9,29 @@ public class no_1107 {
 		int N =in.nextInt();
 		int M = in.nextInt();
 		
-		int count1 = 0;
-		int count2 = 0;
 		boolean[] numlist = new boolean[10];
 		for(int i=0;i<M;i++) {
 			int a = in.nextInt();
-			numlist[a] = false;
+			numlist[a] = true;
+		}
+		in.close();
+		
+		int num = Math.abs(N-100);
+		for(int i=0;i<1000000;i++) {
+			int len = check(i,numlist);
+			if(len !=0) {
+				int cnt = Math.abs(i-N);
+				if(num>len+cnt)
+					num = len + cnt;
+			}
 		}
 		
-		int num = N;
-		boolean state = check(num,numlist);
-		while(!state) {
-			count1++;
-			state = check(++num,numlist);
-		}
-		count1 +=(int)Math.log10(num) +1;
-		System.out.println("1");
-		
-		num = N;
-		state = check(num,numlist);
-		while(!state) {
-			count2++;
-			state = check(--num,numlist);
-		}
-		
-		count2 += (int) Math.log10(num)+1;
-		
-		int min = Math.min(count1, count2);
-		System.out.println(min);
+		System.out.println(num);
 	}
 	
 	public static int check(int N, boolean[] list) {
 		if(N==0) {
-			if(!list[0])
+			if(list[0])
 				return 0;
 			else
 				return 1;
@@ -51,9 +41,11 @@ public class no_1107 {
 		while(N>0) {
 			if(list[N%10])
 				return 0;
+			len++;
+			N/=10;
 		}
 		
-		return state;
+		return len;
 	}
 
 }
