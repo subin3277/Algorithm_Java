@@ -10,25 +10,28 @@ public class no_18870 {
 		Scanner in = new Scanner(System.in);
 		
 		int N = in.nextInt();
-		int[] lenarr = new int[N];
-		
+		int[] list = new int[N];
+		int[] rank = new int[N];
 		for(int i=0;i<N;i++) {
-			int num = in.nextInt();
-			lenarr[i] = num;
+			list[i] = in.nextInt();
+			rank[i] = 0;
 		}
-		in.close();
 		
-		for(int i=0;i<N;i++) {
-			int rank = 0;
-			for(int j = 0; j < N; j++) {
-				if(i == j) continue;
-				if (lenarr[i] > lenarr[j]) {
-					rank++;
+		for(int i=0;i<N-1;i++) {
+			for(int j=i+1;j<N;j++) {
+				if(list[i]>list[j]) {
+					rank[i]++;
 				}
+				else if(list[i]<list[j])
+					rank[j]++;
 			}
-			sb.append(rank).append(" ");
 		}
-		System.out.println(sb.toString());
+		
+		for(int i=0;i<N;i++) {
+			sb.append(rank[i]).append(" ");
+		}
+		System.out.println(sb);
+		
 	}
 
 }
