@@ -1,5 +1,3 @@
-package Lv1;
-
 import java.util.Scanner;
 
 public class 다트게임{
