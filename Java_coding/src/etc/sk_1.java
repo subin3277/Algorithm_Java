@@ -1,4 +1,3 @@
-package etc;
 
 public class sk_1 {
 

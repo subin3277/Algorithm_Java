@@ -1,8 +1,8 @@
-package stage11;
+package bronze2;
 
 import java.util.Scanner;
 
-public class no_2798 {
+public class no_2798_2 {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);

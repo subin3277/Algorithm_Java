@@ -1,4 +1,4 @@
-package stage6;
+package silver5;
 
 public class no_4673 {
 	

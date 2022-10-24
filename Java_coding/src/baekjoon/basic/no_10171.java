@@ -1,4 +1,4 @@
-package stage1;
+package basic;
 
 public class no_10171 {
 

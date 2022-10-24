@@ -1,4 +1,4 @@
-package etc;
+
 
 public class sk_2 {
 

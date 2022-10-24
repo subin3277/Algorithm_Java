@@ -1,4 +1,4 @@
-package example;
+
 
 public class no5 {
 

@@ -1,4 +1,4 @@
-package stage1;
+package basic;
 import java.util.Scanner;
 
 public class no_1000 {

@@ -1,4 +1,4 @@
-package stage9;
+package silver3;
 
 import java.io.BufferedReader;
 import java.io.IOException;

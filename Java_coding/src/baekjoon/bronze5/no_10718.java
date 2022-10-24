@@ -1,4 +1,4 @@
-package stage1;
+package bronze5;
 
 public class no_10718 {
 

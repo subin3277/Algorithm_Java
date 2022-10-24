@@ -1,4 +1,4 @@
-package class2;
+package silver4;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

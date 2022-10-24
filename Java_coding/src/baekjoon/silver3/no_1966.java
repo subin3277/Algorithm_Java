@@ -1,4 +1,4 @@
-package class2;
+package silver3;
 
 import java.util.LinkedList;
 import java.util.Scanner;

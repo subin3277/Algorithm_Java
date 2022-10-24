@@ -1,4 +1,4 @@
-package class3;
+package silver3;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package stage2;
+package bronze5;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package stage6;
+package silver4;
 
 import java.util.Scanner;
 

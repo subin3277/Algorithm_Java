@@ -1,4 +1,4 @@
-package stage9;
+package silver5;
 
 import java.util.Scanner;
 

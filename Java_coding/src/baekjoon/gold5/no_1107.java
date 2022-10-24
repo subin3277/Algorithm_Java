@@ -1,4 +1,4 @@
-package class3;
+package gold5;
 
 import java.util.Scanner;
 

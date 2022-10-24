@@ -1,3 +1,5 @@
+package Lv1;
+
 import java.util.Scanner;
 
 public class 다트게임{
@@ -5,15 +7,12 @@ public class 다트게임{
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		String str = in.next();
-		int res = Solution.solution(str);
+		int res = solution(str);
 		System.out.println(res);
 		in.close();
 	}
-
-}
-
-class Solution {
-    public static int solution(String dartResult) {
+	
+	public static int solution(String dartResult) {
         int answer = 0;
         int[] list = new int[3];
         char[] charlist = dartResult.toCharArray();
@@ -60,4 +59,5 @@ class Solution {
         
         return answer;
     }
+	
 }

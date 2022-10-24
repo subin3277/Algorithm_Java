@@ -1,5 +1,3 @@
-package example;
-
 public class no1 {
 
 	public static void main(String[] args) {
@@ -10,8 +8,8 @@ public class no1 {
 		System.out.println(solution(survey1, choices1));
 		
 	}
-	
-	public static String solution(String[] survey, int[] choices) {
+
+	private static String solution(String[] survey, int[] choices) {
 		String answer = "";
 		int[][] score = new int[4][2];
 		for(int i=0; i<survey.length;i++) {
